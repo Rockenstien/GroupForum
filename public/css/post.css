@@ -1,0 +1,20 @@
+.posted_by, .lightweight_p{
+    font-size: smaller;
+    color: #888;
+}
+.post_heading{
+    font-size: large;
+}
+
+.view_post{
+    margin-left: 33px;
+    margin-top: -10px;
+}
+.modal-post-details{
+    padding: 0.1rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+

@@ -1,0 +1,23 @@
+.group-icon{
+    height: 2rem;
+    width: 2rem;
+    
+    float: left;
+    margin-right: 5px;
+}
+.group-icon img{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+.cover-image{
+    height: 7rem;
+    width: 100%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.cover-image img{
+    height: 100%;
+    width: 100%;
+}
