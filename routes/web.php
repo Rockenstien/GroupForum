@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('home');
 });
 
+// Route::get('/g/{GroupName}')
+
+Route::get('/group', function(){
+    return view('group-page');
+});
+
+
+
+// Route::get('/u/{Usernam}')
+
+Route::get('/user', function(){
+    return view('user-page');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

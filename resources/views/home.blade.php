@@ -6,8 +6,7 @@
     {{-- <x-post /> --}}
 
     {{-- post modal --}}
-    {{-- <x-post_modal /> --}}
-    <x-group-page />
-
+    <x-post_modal />
+    {{-- <x-user-page /> --}}
 </div>
 @endsection
