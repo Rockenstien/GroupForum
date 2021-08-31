@@ -12,12 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+                            <label for="group_name" class="col-md-4 col-form-label text-md-right">{{ __('Group Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="group_name" type="text" class="form-control @error('group_name') is-invalid @enderror" name="group_name" value="{{ old('group_name') }}" required autocomplete="group_name" autofocus>
 
-                                @error('name')
+                                @error('group_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,12 +26,15 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="group_type" class="col-md-4 col-form-label text-md-right">{{ __('Group Type') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
+                                <select id="group_type" class="form-control @error('group_type') is-invalid @enderror" name="group_type" value="{{ old('group_type') }}" required autocomplete="group_type">
+                                    <option value="Public">Public</option>
+                                    <option value="Restricted">Restricted</option>
+                                    <option value="Private">Private</option>
+                                </select>
+                                @error('group_type')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -40,12 +43,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="group_photo" class="col-md-4 col-form-label text-md-right">{{ __('Group Profile Picture') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="group_photo" type="file" class="form-control @error('group_photo') is-invalid @enderror" name="group_photo" required>
 
-                                @error('password')
+                                @error('group_photo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -54,18 +57,16 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="approved_users" class="col-md-4 col-form-label text-md-right">{{ __('Approved Users') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
+                                <input id="app_users" type="file" class="form-control @error('app_users') is-invalid @enderror" name="app_users" required>
 
-                        <div class="form-group row">
-                            <label for="profile-picture" class="col-md-4 col-form-label text-md-right">{{ __('Profile Picture') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="profile-picture" type="file" class="form-control" name="profile-picture" required>
+                                @error('group_photo')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 

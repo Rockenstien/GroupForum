@@ -19,7 +19,7 @@
                   <a class="btn btn-primary btn-lg" href="#" role="button">Subscribe</a>
                   <a class="btn btn-primary btn-lg" href="#" role="button">Create a Post</a>
                 </p>
-                <div id="make-post">
+                <div class="make-post">
                   <textarea name="ed" id="ed" class="feature-editor" cols="50" rows="50"></textarea>
                   <button class="btn btn-primary mt-2">Post</button>
                 </div>

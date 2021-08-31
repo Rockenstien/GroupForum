@@ -23,7 +23,9 @@ Route::get('/group', function(){
     return view('group-page');
 });
 
-
+Route::get('/create-group', function(){
+    return view('create-group');
+});
 
 // Route::get('/u/{Usernam}')
 
