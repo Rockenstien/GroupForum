@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Create Group') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -57,10 +57,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="approved_users" class="col-md-4 col-form-label text-md-right">{{ __('Approved Users') }}</label>
+                            <label for="approved_users" class="col-md-4 col-form-label text-md-right">{{ __('Approved Moderators') }}</label>
 
                             <div class="col-md-6">
-                                <input id="app_users" type="file" class="form-control @error('app_users') is-invalid @enderror" name="app_users" required>
+                                <input id="app_users" type="text" class="form-control @error('app_users') is-invalid @enderror" name="app_users" required>
 
                                 @error('group_photo')
                                     <span class="invalid-feedback" role="alert">

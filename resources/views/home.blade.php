@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     {{-- home page post --}}
-    {{-- <x-post /> --}}
+    <x-post />
 
     {{-- post modal --}}
     <x-post_modal />

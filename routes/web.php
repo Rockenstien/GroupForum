@@ -23,9 +23,13 @@ Route::get('/group', function(){
     return view('group-page');
 });
 
+Route::get('/post-wall', function(){
+    return view('post-wall');
+});
+
 Route::get('/create-group', function(){
     return view('create-group');
-});
+})->name('create-group');
 
 // Route::get('/u/{Usernam}')
 
