@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create Group') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('make-group') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -60,9 +60,23 @@
                             <label for="approved_users" class="col-md-4 col-form-label text-md-right">{{ __('Approved Moderators') }}</label>
 
                             <div class="col-md-6">
-                                <input id="app_users" type="text" class="form-control @error('app_users') is-invalid @enderror" name="app_users" required>
+                                <input id="app_users" type="text" class="form-control @error('app_users') is-invalid @enderror" multiple name="app_users" required>
 
-                                @error('group_photo')
+                                @error('app_users')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="approved_users" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+
+                            <div class="col-md-6">
+                                <textarea id="group_description" class="form-control @error('group_description') is-invalid @enderror feature-editor" name="group_description" required></textarea>
+
+                                @error('group_description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -83,4 +97,24 @@
         </div>
     </div>
 </div>
+<script>
+    $('#app_users').select2({
+		placeholder: "Selected Users",
+		ajax: {
+			url: "{{ route('create-group') }}",
+			dataType: 'json',
+			type: 'GET',
+			data: function(params) { return { term: params.term , page: params.page || 0 }},
+			processResults: function (data) {
+			let more = data.pagination;
+				return {
+					results: data.results,
+					pagination: {
+						more: more.more,
+					}
+				};
+			}
+		}
+	});
+</script>
 @endsection

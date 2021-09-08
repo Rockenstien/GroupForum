@@ -31,6 +31,10 @@ Route::get('/create-group', function(){
     return view('create-group');
 })->name('create-group');
 
+Route::get('/make-group', function(){
+    return view('create-group');
+})->name('make-group');
+
 // Route::get('/u/{Usernam}')
 
 Route::get('/user', function(){
